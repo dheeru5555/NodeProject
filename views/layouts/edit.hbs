@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+  <title>CRUD</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+</head>
+<body>
+
+<div class="card text-center" style="padding:15px;">
+  <h4>NODEJS: CRUD using Nodejs and MongoDB</h4>
+</div><br> 
+
+<div class="container">
+ <div class="row">
+
+  <div class="col-sm-8">
+    <h4 class="text-center  ml-4  mb-5">View Records</h4>
+     <form action="/update/{{club.id}}" method="POST">
+      <table class="table table-hover table-bordered ml-4 ">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>User Name</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        
+            <tr>
+            <td><input type="text" name="name" value="{{club.name}}"></td>
+            <td><input type="text" name="email" value="{{club.email}}"></td>
+            <td><input type="text" name="user" value="{{club.user}}"></td>
+            <td><button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure to Update this record ?')">update</button></td>
+            </tr>
+         
+        </tbody>
+     </table>
+    </form> 
+  </div>
+ </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
