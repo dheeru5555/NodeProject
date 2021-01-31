@@ -9,7 +9,7 @@
 <body>
 
 <div class="card text-center" style="padding:15px;">
-  <h4>PHP: CRUD using OOPS Bind Pramameter</h4>
+  <h4>NODEJS: CRUD using Nodejs and MongoDB</h4>
 </div><br> 
 
 <div class="container">
@@ -18,25 +18,19 @@
     <div class="col-sm-4">
     <h4 class="text-center  ml-4 mb-5">Insert Records</h4>
      <form  action="/insert" method="POST">
-        <div class="form-group">
      
+        <div class="form-group">
         <input type="text" class="form-control  mb-4" name="name" placeholder="Enter name" required="">
         </div>
 
-
         <div class="form-group">
-             {{name}}
            <input type="email" class="form-control  mb-4" name="email" placeholder="Enter email" required="">
         </div>
 
         <div class="form-group">
-             {{email}}
         <input type="text" class="form-control mb-4" name="username" placeholder="Enter username" required="">
         </div>
-        <div class="form-group">
-                {{user}}
-        <input type="password" class="form-control mb-4" name="password" placeholder="Enter password" required="">
-        </div>
+        
         <input type="submit" name="submit" class="btn btn-primary btn-block" style="float:right;" value="Submit">
     </form>
     </div>
@@ -46,7 +40,6 @@
     <table class="table table-hover table-bordered ml-4 ">
         <thead>
         <tr>
-            <th>Id</th>
             <th>Name</th>
             <th>Email</th>
             <th>User Name</th>
@@ -57,15 +50,12 @@
 
           {{#each records}}
             <tr>
-            <td>{{id}}</td>
             <td>{{name}}</td>
             <td>{{email}}</td>
             <td>{{user}}</td>
-            <td><a href="/course/delete/{{id}}">
-                   <i class="fa fa-trash"></i>
+            <td><a href="/{{id}}" onclick="return confirm('Are you sure to delete this record ?');" class="fa fa-trash">
                 </a>
-                <a href="edit.php?update_id=<?php echo $student['id']; ?>">
-                   <i class="fa fa-edit">
+                <a href="edit/{{id}}" class="fa fa-edit"></a>     
             </td>
             </tr>
             {{/each}}
